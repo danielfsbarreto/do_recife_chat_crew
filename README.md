@@ -1,7 +1,7 @@
 # DoRecifeChatCrew
 
 A RAG Q&A crew that answers questions about the **Diário Oficial do Recife** by
-querying the embeddings produced by [`../do_recife_embedder`](../do_recife_embedder)
+querying the embeddings produced by [`do_recife_embedder`](https://github.com/danielfsbarreto/do_recife_embedder)
 in MongoDB Atlas Vector Search.
 
 Two agents run sequentially:
