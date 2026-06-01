@@ -6,11 +6,6 @@ from do_recife_chat_crew.crew import DoRecifeChatCrew
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
-# Target MongoDB collection populated by ../do_recife_embedder.
-# Use "do-recife-rag-enriched" (with metadata) or "do-recife-rag" (plain).
-# Passed as a crew input; the before_kickoff hook points the tool at it.
-COLLECTIONS = {"plain": "do-recife-rag", "enriched": "do-recife-rag-enriched"}
-
 
 def run():
     """
@@ -18,7 +13,6 @@ def run():
     """
     inputs = {
         "question": "Quais decretos foram publicados na edição mais recente do Diário Oficial do Recife?",
-        "collection_name": COLLECTIONS["enriched"],
     }
 
     try:
@@ -33,7 +27,6 @@ def train():
     """
     inputs = {
         "question": "Quais decretos foram publicados na edição mais recente do Diário Oficial do Recife?",
-        "collection_name": COLLECTIONS["enriched"],
     }
     try:
         DoRecifeChatCrew().crew().train(
@@ -61,7 +54,6 @@ def test():
     """
     inputs = {
         "question": "Quais decretos foram publicados na edição mais recente do Diário Oficial do Recife?",
-        "collection_name": COLLECTIONS["enriched"],
     }
 
     try:
@@ -92,7 +84,6 @@ def run_with_trigger():
     inputs = {
         "crewai_trigger_payload": trigger_payload,
         "question": "",
-        "collection_name": COLLECTIONS["enriched"],
     }
 
     try:

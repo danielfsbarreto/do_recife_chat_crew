@@ -4,8 +4,6 @@ retrieval_task:
     Oficial do Recife that are most relevant to answering this question:
     {question}
 
-    Make sure you query the collection: {collection_name}.
-
     Do NOT run a single search. Issue MULTIPLE search queries (at least 3-4)
     using different variations of the question: rephrase it, swap in synonyms,
     isolate key terms, and try specific names, dates, numbers, and document

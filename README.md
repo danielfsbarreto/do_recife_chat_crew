@@ -40,17 +40,11 @@ or vector search returns irrelevant results.
 crewai run
 ```
 
-Edit the inputs in [`src/do_recife_chat_crew/main.py`](src/do_recife_chat_crew/main.py):
-
-- `question` – the question to answer.
-- `COLLECTION_NAME` – `do-recife-rag-enriched` (default, has citation metadata) or `do-recife-rag` (plain).
-
-The collection is passed as a crew input and applied by the `select_collection`
-`@before_kickoff` hook in [`crew.py`](src/do_recife_chat_crew/crew.py), which points the
-search tool at the chosen collection. The final answer is printed and written to `answer.md`.
+Set the `question` input in [`src/do_recife_chat_crew/main.py`](src/do_recife_chat_crew/main.py).
+The final answer is printed and written to `answer.md`.
 
 ## Configuration
 
 - [`config/agents.yaml`](src/do_recife_chat_crew/config/agents.yaml) – agent roles, goals, and LLM.
 - [`config/tasks.yaml`](src/do_recife_chat_crew/config/tasks.yaml) – retrieval and answer tasks.
-- [`crew.py`](src/do_recife_chat_crew/crew.py) – tool wiring (database `do-recife`, index `vector_index`) and the collection hook.
+- [`crew.py`](src/do_recife_chat_crew/crew.py) – tool wiring (database `do-recife`, collection `do-recife-rag-enriched`, index `vector_index`).
